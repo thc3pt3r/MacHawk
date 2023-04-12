@@ -4,6 +4,8 @@ def hunt_for_all():
     create_output_dir()
     previous_logged_user()
     active_logged_users()
+    get_user_list()
+    get_cleaned_user_list()
 
 
 def create_output_dir():

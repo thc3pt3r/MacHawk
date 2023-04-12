@@ -7,6 +7,8 @@ def hunt_for_all():
     mad_path()
     etc_listing()
     hosts_content()
+    copy_launchagents()
+    copy_launchdaemons()
 
 
 def create_output_dir():

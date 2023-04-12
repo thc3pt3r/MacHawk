@@ -13,9 +13,6 @@ def print_hi(name):
 def show_menu():
     print("======= MacHawk - DTT CIR Triage =======")
     print("1. Run a complete IR Triage collection")
-    print("2. Hunt for Processes")
-    print("3. Hunt network activity")
-    print("4. Hunt for User related outputs")
     print("5. exit")
 
     while True:
@@ -35,12 +32,6 @@ def show_menu():
         sys_hawk.hunt_for_all()
         finisher_hawk.create_output_folder()
         # sys_hawk.sysdiagnose_hawk()
-    elif choice == 2:
-        print(process_hawk.list_process())
-    elif choice == 3:
-        print(networking_hawk.network_ativity())
-    elif choice == 4:
-        users_hawk.hunt_for_all()
     elif choice == 5:
         print("Exiting the menu.")
 

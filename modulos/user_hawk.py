@@ -33,3 +33,23 @@ def active_logged_users():
     with open(file_path, 'w') as f:
         f.write(output)
     print(f"W command saved to {file_path}")
+
+
+def get_cleaned_user_list():
+    command = 'sudo dscl . list /Users UniqueID | grep -v ^_'
+    file_path = os.path.join('Users_hawk','no_systemAccount_List.txt')
+    result = subprocess.run(command, stdout=subprocess.PIPE, shell=True)
+    output = result.stdout.decode()
+    with open(file_path, 'w') as f:
+        f.write(output)
+    print(f'f"Cleaner User List saved to {file_path}"')
+
+
+def get_user_list():
+    command = 'sudo dscl . list'
+    file_path = os.path.join('Users_hawk','Complete_user_List.txt')
+    result = subprocess.run(command, stdout=subprocess.PIPE, shell=True)
+    output = result.stdout.decode()
+    with open(file_path, 'w') as f:
+        f.write(output)
+    print(f'f"Complete User List saved to {file_path}"')

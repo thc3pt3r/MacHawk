@@ -7,8 +7,7 @@ def hunt_for_all():
     mad_path()
     etc_listing()
     hosts_content()
-    copy_launchagents()
-    copy_launchdaemons()
+
 
 
 def create_output_dir():
@@ -18,6 +17,8 @@ def create_output_dir():
         print("the directory already exist")
     except Exception as e:
         print(f"There was an error creating the Directory: {e}")
+
+
 def sysdiagnose_hawk():
     directory_name = "System_hawk"
     try:
@@ -83,25 +84,3 @@ def hosts_content():
     print(f"hosts content output saved to {file_path}")
 
 
-def copy_launchagents():
-    src_dir = "/Library/LaunchAgents/"
-    dest_dir = "Logs_hawk/LaunchAgents/"
-    try:
-        shutil.copytree(src_dir, dest_dir)
-        print(f"Directory '{src_dir}' copied to '{dest_dir}' successfully!")
-    except shutil.Error as e:
-        print(f"An error occurred while copying directory '{src_dir}' to '{dest_dir}': {e}")
-    except Exception as e:
-        print(f"An unexpected error occurred while copying directory '{src_dir}' to '{dest_dir}': {e}")
-
-
-def copy_launchdaemons():
-    src_dir = "/Library/LaunchDaemons/"
-    dest_dir = "Logs_hawk/LaunchDaemons/"
-    try:
-        shutil.copytree(src_dir, dest_dir)
-        print(f"Directory '{src_dir}' copied to '{dest_dir}' successfully!")
-    except shutil.Error as e:
-        print(f"An error occurred while copying directory '{src_dir}' to '{dest_dir}': {e}")
-    except Exception as e:
-        print(f"An unexpected error occurred while copying directory '{src_dir}' to '{dest_dir}': {e}")

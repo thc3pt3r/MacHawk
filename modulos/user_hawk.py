@@ -28,9 +28,9 @@ def previous_logged_user():
 
 
 def active_logged_users():
-    command = ['sudo', 'w']
+    command = 'sudo w'
     file_path = os.path.join('Users_hawk', 'W_output.txt')
-    result = subprocess.run(command, stdout=subprocess.PIPE)
+    result = subprocess.run(command, stdout=subprocess.PIPE, shell=True)
     output = result.stdout.decode()
     with open(file_path, 'w') as f:
         f.write(output)
@@ -48,7 +48,7 @@ def get_cleaned_user_list():
 
 
 def get_user_list():
-    command = 'sudo dscl . list'
+    command = 'sudo dscl . list /Users UniqueID'
     file_path = os.path.join('Users_hawk','Complete_user_List.txt')
     result = subprocess.run(command, stdout=subprocess.PIPE, shell=True)
     output = result.stdout.decode()

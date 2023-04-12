@@ -12,7 +12,7 @@ A Triage Collector Tool for Mac Systems.
 ## Usage/Examples
 
 python3 MacHawk.py
-```
+
 
 
 ## Used By

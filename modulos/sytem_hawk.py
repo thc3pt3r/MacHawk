@@ -1,6 +1,5 @@
-import subprocess
-import os
-import datetime
+import subprocess, os, datetime, shutil
+
 
 
 def hunt_for_all():
@@ -80,3 +79,27 @@ def hosts_content():
     with open(file_path, 'w') as f:
         f.write(output)
     print(f"hosts content output saved to {file_path}")
+
+
+def copy_launchagents():
+    src_dir = "/Library/LaunchAgents/"
+    dest_dir = "Logs_hawk/LaunchAgents/"
+    try:
+        shutil.copytree(src_dir, dest_dir)
+        print(f"Directory '{src_dir}' copied to '{dest_dir}' successfully!")
+    except shutil.Error as e:
+        print(f"An error occurred while copying directory '{src_dir}' to '{dest_dir}': {e}")
+    except Exception as e:
+        print(f"An unexpected error occurred while copying directory '{src_dir}' to '{dest_dir}': {e}")
+
+
+def copy_launchdaemons():
+    src_dir = "/Library/LaunchDaemons/"
+    dest_dir = "Logs_hawk/LaunchDaemons/"
+    try:
+        shutil.copytree(src_dir, dest_dir)
+        print(f"Directory '{src_dir}' copied to '{dest_dir}' successfully!")
+    except shutil.Error as e:
+        print(f"An error occurred while copying directory '{src_dir}' to '{dest_dir}': {e}")
+    except Exception as e:
+        print(f"An unexpected error occurred while copying directory '{src_dir}' to '{dest_dir}': {e}")

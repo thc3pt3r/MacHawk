@@ -40,7 +40,7 @@
 
 ![Screen Shot](images/screenshot.png)
 
-MacHack is a MacOs forensic collector. The collector is still on alpha test and being tested by Deloitte's Argentina CIR Team
+MacHack is a MacOs forensic collector. The collector is still on alpha test and being tested by Deloitte's  Argentina CIR Team
 
 ## Built With
 

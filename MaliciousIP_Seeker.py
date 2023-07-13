@@ -1,5 +1,6 @@
 import csv, json, re, sys, os
-
+import pandas as pd
+import numpy as np
 
 # Specify the path to the JSON file containing the fields to extract
 fields_file_path = 'field_names.json'
@@ -83,6 +84,52 @@ def search_ip_address(ip_address, input_file, output_file, fields_file):
         print('Unrecognized file format.')
 
 
+def pandas_test(csv_file,output_file):
+# Read the CSV file into a DataFrame
+    df = pd.read_csv(csv_file, header=None, na_filter=False, engine='python')
+
+    # Convert all values to strings
+    df = df.astype(str)
+
+    # Extract column names from the first row
+    column_names = df.iloc[0].str.split('=', expand=True)[0].tolist()
+     # Find the index of the "srcip" column
+    srcip_index = column_names.index("srcip")
+    print(column_names)
+    
+    filtered_df = df[df.iloc[:, srcip_index].str.split('=', expand=True)[1] == '10.214.1.116']
+    # Find the indices of the selected columns from the JSON file
+    with open(fields_file_path) as f:
+        selected_columns = json.load(f)
+    
+    selected_columns_dict = {col: [] for col in selected_columns}
+
+    
+    max_fields = 0
+    for _, row in df.iterrows():
+        values = row.str.split('=', expand=True)[1].tolist()
+        max_fields = max(max_fields, len(values))
+
+        
+        values.extend([''] * (max_fields - len(values)))
+
+        for col, value in zip(column_names, values):
+            if col in selected_columns_dict:
+                selected_columns_dict[col].append(value)
+    
+    max_length = max(len(values) for values in selected_columns_dict.values())
+
+    
+    for col, values in selected_columns_dict.items():
+        if len(values) < max_length:
+            values.extend([''] * (max_length - len(values)))
+
+    
+    filtered_df = pd.DataFrame(selected_columns_dict)
+
+    # Save to a new CSV file
+    filtered_df.to_csv(output_file, index=False)
+
 # Call the search_ip_address function
 #search_ip_address(ip_address_to_search, input_file_path, output_file_path, fields_file_path)
 
@@ -93,7 +140,8 @@ def show_menu():
     print("1. Search IP on Sigle Log file")
     print("2. Search IP on an entire directory")
     print("3. Search IP on SPIN specific format")
-    print("4. exit")
+    print("4. Search pandas_test")
+    print("5. exit")
 
     while True:
         try:
@@ -125,6 +173,9 @@ def show_menu():
         else:
             print("No matching rows found.")
     elif choice==4:
+        input_csv = input("Please insert csv file: ")
+        pandas_test(input_csv,output_file='pandas_result.csv')
+    elif choice==5:
         sys.exit(0)
         
 

@@ -1,0 +1,22 @@
+[
+    "devname",
+    "date",
+    "time",
+    "type",
+    "subtype",
+    "action",
+    "srcip",
+    "srcport",
+    "dstip",
+    "dstcountry",    
+    "policyname",
+    "service",
+    "transip",
+    "app",
+    "sentbyte",
+    "rcvdbyte",
+    "osname",
+    "srcmac",
+    "utmaction",
+    "user"
+]

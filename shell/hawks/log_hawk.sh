@@ -16,7 +16,7 @@ grab_logs(){
 
     if [ -d "$dest_dir" ]; then
         echo "El directorio de destino '$dest_dir' ya existe. Saliendo."
-        return 1
+        #return 1
     fi
 
     #rsync -avXpoglt -- "$src_dir" "$dest_dir"

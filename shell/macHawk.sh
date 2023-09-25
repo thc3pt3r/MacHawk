@@ -8,6 +8,7 @@ source ./hawks/network_hawk.sh
 source ./hawks/persistance_hawk.sh
 source ./hawks/process_hawk.sh
 source ./hawks/users_hawks.sh
+source ./hawks/system_hawk.sh
 #Fin importacion de modulos
 #funciones
 mostrar_ayuda() {

@@ -1,7 +1,12 @@
 #!/bin/bash
 
 # Programa para realizar un triage de Incident response en equipo MacOs
-
+# importación de los distintos modulos
+source ./hawks/general_hawk.sh
+source ./hawks/log_hawk.sh
+source ./hawks/network_hawk.sh
+source ./hawk/persistance_hawk.sh
+#Fin importacion de modulos
 #funciones
 mostrar_ayuda() {
     clear
@@ -19,20 +24,25 @@ run_complete_triage(){
     clear
     echo "Ejecutando Triage Completo"
     echo "============================================================"
-    echo "Creating the Triage Folder"
-    source ./hawks/general_hawk.sh
+    echo "Creating the Triage Folder"    
     # Get the current datetime in a specific format (e.g., YYYYMMDD_HHMMSS)
     datetime=$(date +'%Y%m%d_%H%M%S')
     parent_dir="Triage_Collection_$datetime"
     create_output_dir $parent_dir
     echo "============================================================"
-    echo "Excecutando Triage de Logs"
-    source ./hawks/log_hawk.sh
+    echo "Executing Log triage"    
     run_Logs_triage $parent_dir
+    echo "============================================================"
+    echo "Executing Networking triage"
+    run_Network_triage $parent_dir
+    echo "============================================================"
+    echo "Executing Persistance triage"
+    run_persistance_hawk $parent_dir
+    echo "============================================================"
     echo "============================================================"
     echo "Compresing Output Directory"
     compress_Triage_Output $parent_dir
-    
+
     exit 0
     
 }

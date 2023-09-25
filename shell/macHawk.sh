@@ -6,6 +6,7 @@ source ./hawks/general_hawk.sh
 source ./hawks/log_hawk.sh
 source ./hawks/network_hawk.sh
 source ./hawks/persistance_hawk.sh
+source ./hawks/process_hawk.sh
 #Fin importacion de modulos
 #funciones
 mostrar_ayuda() {
@@ -38,6 +39,9 @@ run_complete_triage(){
     echo "============================================================"
     echo "Executing Persistance triage"
     run_persistance_hawk $parent_dir
+    echo "============================================================"
+    echo "Executing Running Process triage"
+    run_process_hawk $parent_dir
     echo "============================================================"
     echo "============================================================"
     echo "Compresing Output Directory"

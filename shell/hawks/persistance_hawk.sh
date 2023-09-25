@@ -12,7 +12,7 @@ grab_launchAgents(){
     fi
 
     #rsync -avXpoglt -- "$src_dir" "$dest_dir"
-    rsync -aX -- "$src_dir" "$dst_dir"
+    rsync -ar --progress --log-file=$1/Acquired_LaunchAgents_Logs.txt -- "$src_dir" "$dst_dir"
 
     if [ $? -eq 0 ]; then
         echo "Directorio '$src_dir' copiado a '$dst_dir' exitosamente!"
@@ -30,7 +30,7 @@ grab_LaunchDeamon(){
     fi
 
     #rsync -avXpoglt -- "$src_dir" "$dest_dir"
-    rsync -aX -- "$src_dir" "$dst_dir"
+    rsync -ar --progress --log-file=$1/Acquired_LaunchDaemons_Logs.txt -- "$src_dir" "$dst_dir"
 
     if [ $? -eq 0 ]; then
         echo "Directorio '$src_dir' copiado a '$dst_dir' exitosamente!"

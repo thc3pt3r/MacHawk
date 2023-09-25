@@ -19,7 +19,8 @@ grab_logs(){
         return 1
     fi
 
-    rsync -avXpoglt -- "$src_dir" "$dest_dir"
+    #rsync -avXpoglt -- "$src_dir" "$dest_dir"
+    rsync -a -- "$src_dir" "$dest_dir"
 
     if [ $? -eq 0 ]; then
         echo "Directorio '$src_dir' copiado a '$dest_dir' exitosamente!"

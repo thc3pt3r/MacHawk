@@ -35,6 +35,7 @@ run_Logs_triage(){
     else
         echo "create_output_dir encountered an error."
     fi
+    grab_logs
     
 }
 

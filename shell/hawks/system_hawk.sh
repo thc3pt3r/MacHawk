@@ -5,7 +5,7 @@ source ./hawks/general_hawk.sh
 
 # Tiny executions
 grab_mad_path(){
-    MP_file=$1/Previous_Logged_Users.txt
+    MP_file=$1/mad_paths.txt
     IFS=':' read -ra paths <<< "$PATH"
     for path in "${paths[@]}"; do
         cd "$path" || continue
@@ -14,12 +14,12 @@ grab_mad_path(){
     done > "$MP_file"    
 }
 grab_etc_listing(){
-    ETL_file=$1/Etc_Listing.txt
-    sudo sudo ls -altR /etc/ > $ETL_file
+    E_file=$1/etc_Listing.txt
+    sudo sudo ls -altR /etc/ > $E_file
 }
 grab_hosts_content(){
-    HO_file=$1/hosts_content.txt
-    sudo sudo cat /etc/hosts > $HO_file
+    H_file=$1/hosts_content.txt
+    sudo sudo cat /etc/hosts > $H_file
 }
 
 # Main execution

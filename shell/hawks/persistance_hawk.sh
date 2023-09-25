@@ -43,7 +43,7 @@ grab_LaunchDeamon(){
 
 run_persistance_hawk(){
     parent_dst_dir=$1/"Persistance_hawk"
-    create_output_dir $dst_dir
+    create_output_dir $parent_dst_dir
     if [ $? -eq 0 ]; then
         echo "create_output_dir executed successfully."
     else

@@ -20,7 +20,7 @@ grab_logs(){
     fi
 
     #rsync -avXpoglt -- "$src_dir" "$dest_dir"
-    rsync -aX -- "$src_dir" "$dest_dir"
+    rsync -ar --progress --lof-file=$1/acquiredLogs.txt -- "$src_dir" "$dest_dir"
 
     if [ $? -eq 0 ]; then
         echo "Directorio '$src_dir' copiado a '$dest_dir' exitosamente!"

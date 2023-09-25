@@ -29,6 +29,10 @@ run_complete_triage(){
     echo "Excecutando Triage de Logs"
     source ./hawks/log_hawk.sh
     run_Logs_triage $parent_dir
+    echo "============================================================"
+    echo "Compresing Output Directory"
+    compress_Triage_Output $parent_dir
+    
     exit 0
     
 }

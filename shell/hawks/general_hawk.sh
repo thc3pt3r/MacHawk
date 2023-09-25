@@ -10,3 +10,24 @@ create_output_dir() {
         echo "Directory '$directory' created successfully."
     fi
 }
+
+    compress_Triage_Output(){
+        if [ -z "$1" ]; then
+        echo "Error: Debes proporcionar un nombre de carpeta como argumento."
+        return 1
+        fi
+
+        if [ ! -d "$1" ]; then
+            echo "Error: La carpeta '$1' no existe."
+            return 1
+        fi
+
+        zip -r -9 "$1.zip" "$1"
+
+        if [ $? -eq 0 ]; then
+            echo "Compresión exitosa: '$1.zip'"
+            echo "Path completo: $(realpath "$1.zip")"
+        else
+            echo "Error: Ocurrió un problema durante la compresión de '$1'."
+        fi
+    }

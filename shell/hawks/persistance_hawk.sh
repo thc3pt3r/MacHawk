@@ -5,7 +5,7 @@ source ./hawks/general_hawk.sh
 
 grab_launchAgents(){
     src_dir="/Library/LaunchAgents/"
-    dst_dir=$1/"Persistance_hawk/LaunchAgents"
+    dst_dir=$1/"LaunchAgents"
      if [ -d "$dst_dir" ]; then
         echo "El directorio de destino '$dst_dir' ya existe. Saliendo."
         #return 1
@@ -23,7 +23,7 @@ grab_launchAgents(){
 
 grab_LaunchDeamon(){
     src_dir="/Library/LaunchDaemons/"
-    dst_dir=$1/"Persistance_hawk/LaunchDaemons"
+    dst_dir=$1/"LaunchDaemons"
      if [ -d "$dst_dir" ]; then
         echo "El directorio de destino '$dst_dir' ya existe. Saliendo."
         #return 1

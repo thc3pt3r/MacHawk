@@ -6,7 +6,7 @@ grab_running_process(){
     sudo ps -axo user,pid,ppid,%cpu,%mem,start,time,command  > $P_file
 }
 run_process_hawk(){
-    dst_dir=$1/"Persistance_hawk"
+    dst_dir=$1/"Process_hawk"
     create_output_dir $dst_dir
     if [ $? -eq 0 ]; then
         echo "create_output_dir executed successfully."

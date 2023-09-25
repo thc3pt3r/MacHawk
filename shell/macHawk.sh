@@ -47,10 +47,16 @@ run_complete_triage(){
     echo "Executing Users triage"
     run_users_hawk $parent_dir
     echo "============================================================"
+    echo "Executing System triage"
+    run_system_hawk $parent_dir
     echo "============================================================"
     echo "Compresing Output Directory"
     compress_Triage_Output $parent_dir
-
+    echo "============================================================"
+    echo "++                  ++"
+    echo "++ Triage Completed ++"
+    echo "++                  ++"
+    echo "============================================================"
     exit 0
     
 }

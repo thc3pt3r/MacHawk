@@ -14,11 +14,11 @@ grab_mad_path(){
     done > "$MP_file"    
 }
 grab_etc_listing(){
-    E_file=$1/etc_Listing.txt
+    E_file=$1/listing.txt
     sudo sudo ls -altR /etc/ > $E_file    
 }
 grab_hosts_content(){
-    H_file=$1/hosts_content.txt
+    H_file=$1/hosts.txt
     sudo sudo cat /etc/hosts > $H_file
 }
 

@@ -12,7 +12,7 @@ grab_logs(){
 #    -l es necesario para preservar los enlaces simbólicos.
 #    -t es necesario para preservar las fechas de modificación.
     src_dir="/var/log/"
-    dest_dir="Logs_hawk/"
+    dest_dir=$1
 
     if [ -d "$dest_dir" ]; then
         echo "El directorio de destino '$dest_dir' ya existe. Saliendo."
@@ -36,7 +36,7 @@ run_Logs_triage(){
     else
         echo "create_output_dir encountered an error."
     fi
-    grab_logs
+    grab_logs $dst_dir
     
 }
 

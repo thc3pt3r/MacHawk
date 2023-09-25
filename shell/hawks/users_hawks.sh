@@ -32,16 +32,16 @@ run_users_hawk(){
     else
         echo "create_output_dir encountered an error."
     fi
-    echo "============================================================"
+    echo "************************************************************"
     echo "Acquiring Previous logged users"
     grab_previous_logged_users $dst_dir
-    echo "============================================================"
+    echo "************************************************************"
     echo "Acquiring Active logged users"
     grab_active_logged_users $dst_dir
-    echo "============================================================"
+    echo "************************************************************"
     echo "Acquiring User list"
     grab_complete_user_list $dst_dir
-    echo "============================================================"
+    echo "************************************************************"
     echo "Acquiring cleaned User list"
     grab_cleaned_user_list $dst_dir
 }

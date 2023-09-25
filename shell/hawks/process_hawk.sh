@@ -13,7 +13,7 @@ run_process_hawk(){
     else
         echo "create_output_dir encountered an error."
     fi
-    echo "============================================================"
+    echo "************************************************************"
     echo "Acquiring Running Process"
     grab_running_process $dst_dir
     

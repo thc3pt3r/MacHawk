@@ -5,14 +5,14 @@ source ./hawks/general_hawk.sh
 
 grab_launchAgents(){
     src_dir="/Library/LaunchAgents/"
-    dst_dir=$1/"LaunchAgents"
+    dst_dir=$1/"LaunchAgents/"
      if [ -d "$dst_dir" ]; then
         echo "El directorio de destino '$dst_dir' ya existe. Saliendo."
         #return 1
     fi
 
     #rsync -avXpoglt -- "$src_dir" "$dest_dir"
-    rsync -ar --progress --log-file=$1/Acquired_LaunchAgents_Logs.txt -- "$src_dir" "$dst_dir"
+    rsync -ar --progress --log-file=$dst_dir/Acquired_LaunchAgents_Logs.txt -- "$src_dir" "$dst_dir"
 
     if [ $? -eq 0 ]; then
         echo "Directorio '$src_dir' copiado a '$dst_dir' exitosamente!"
@@ -23,14 +23,14 @@ grab_launchAgents(){
 
 grab_LaunchDeamon(){
     src_dir="/Library/LaunchDaemons/"
-    dst_dir=$1/"LaunchDaemons"
+    dst_dir=$1/"LaunchDaemons/"
      if [ -d "$dst_dir" ]; then
         echo "El directorio de destino '$dst_dir' ya existe. Saliendo."
         #return 1
     fi
 
     #rsync -avXpoglt -- "$src_dir" "$dest_dir"
-    rsync -ar --progress --log-file=$1/Acquired_LaunchDaemons_Logs.txt -- "$src_dir" "$dst_dir"
+    rsync -ar --progress --log-file=$dst_dir/Acquired_LaunchDaemons_Logs.txt -- "$src_dir" "$dst_dir"
 
     if [ $? -eq 0 ]; then
         echo "Directorio '$src_dir' copiado a '$dst_dir' exitosamente!"
@@ -49,11 +49,11 @@ run_persistance_hawk(){
     else
         echo "create_output_dir encountered an error."
     fi
-    echo "============================================================"
+    echo "************************************************************"
     echo "Acquiring LaunchAgent"
     grab_launchAgents $dst_dir
-    echo "============================================================"
+    echo "************************************************************"
     echo "Acquiring LaunchDeamon"
     grab_LaunchDeamon $dst_dir
-    echo "============================================================"
+    echo "************************************************************"
 }

@@ -25,11 +25,11 @@ run_Network_triage(){
     else
         echo "create_output_dir encountered an error."
     fi
-    echo "=================================================="
+    echo "************************************************************"
     echo "Acquiring network statistics"
     get_network_stat $dst_dir
-    echo "=================================================="
+    echo "************************************************************"
     echo "Acquiring Files with Open connections"
     get_lsof_output $dst_dir
-    echo "=================================================="
+    echo "************************************************************"
 }

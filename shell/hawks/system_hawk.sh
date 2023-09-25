@@ -15,7 +15,7 @@ grab_mad_path(){
 }
 grab_etc_listing(){
     E_file=$1/etc_Listing.txt
-    sudo sudo ls -altR /etc/ > $E_file
+    sudo sudo ls -altR /etc/ > $E_file    
 }
 grab_hosts_content(){
     H_file=$1/hosts_content.txt
@@ -24,8 +24,8 @@ grab_hosts_content(){
 
 # Main execution
 run_system_hawk(){
-    dst_dir=$1/"System_hawk"
-    create_output_dir $dst_dir
+    parent_dst_dir=$1/"System_hawk"
+    create_output_dir $parent_dst_dir
     if [ $? -eq 0 ]; then
         echo "create_output_dir executed successfully."
     else
@@ -33,11 +33,11 @@ run_system_hawk(){
     fi
     echo "************************************************************"
     echo "Acquiring Mad Paths"
-    grab_mad_path $dst_dir
+    grab_mad_path $parent_dst_dir
     echo "************************************************************"
     echo "Acquiring ETC Listing"
-    grab_etc_listing $dst_dir
+    grab_etc_listing $parent_dst_dir
     echo "************************************************************"
     echo "Acquiring Hosts file Content "
-    grab_hosts_content $dst_dir
+    grab_hosts_content $parent_dst_dir
 }

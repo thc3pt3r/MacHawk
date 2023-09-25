@@ -15,12 +15,12 @@ grab_logs(){
     dest_dir=$1
 
     if [ -d "$dest_dir" ]; then
-        echo "El directorio de destino '$dest_dir' ya existe. Saliendo."
+        echo "El directorio de destino '$dest_dir' ya existe. Continuando la ejecución."
         #return 1
     fi
 
     #rsync -avXpoglt -- "$src_dir" "$dest_dir"
-    rsync -ar --progress --lof-file=$1/acquiredLogs.txt -- "$src_dir" "$dest_dir"
+    rsync -ar --progress --log-file=$1/acquiredLogs.txt -- "$src_dir" "$dest_dir"
 
     if [ $? -eq 0 ]; then
         echo "Directorio '$src_dir' copiado a '$dest_dir' exitosamente!"

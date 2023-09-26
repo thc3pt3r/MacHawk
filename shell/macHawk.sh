@@ -24,10 +24,9 @@ mostrar_ayuda() {
     echo " ============================================================ "
     
 }
-run_complete_triage(){
-    clear
+run_complete_triage(){    
     print_banner
-    echo"\n"
+    echo "\n"
     echo "============================================================"
     echo "Ejecutando Triage Completo"
     echo "============================================================"

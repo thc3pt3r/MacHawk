@@ -33,5 +33,5 @@ create_output_dir() {
     }
 
     print_banner (){
-        cat ./banner.txt
+        cat ./banner2.txt
     }

@@ -26,6 +26,8 @@ mostrar_ayuda() {
 }
 run_complete_triage(){
     clear
+    print_banner
+    echo "============================================================"
     echo "Ejecutando Triage Completo"
     echo "============================================================"
     echo "Creating the Triage Folder"    

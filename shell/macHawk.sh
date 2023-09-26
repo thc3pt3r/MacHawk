@@ -73,10 +73,6 @@ run_partial_triage(){
 }
 
 #loop principal
-if [ "$1" == "-h" ] || [ "$1" == "--help"]; then
-    mostrar_ayuda
-    exit 0
-fi
 while true; do
     case "$1" in
         -com|--complete)

@@ -19,6 +19,7 @@ mostrar_ayuda() {
     echo "  -h, --help          Show this help."
     echo "  -c, --complete      Run a complete IR Triage collection."
     echo "  -p, --partial       Run a partial IR Triage collection."
+    echo " -b, --banner         Print Banner"
     echo "  -q, --quit          Exit the program."
     echo " ============================================================ "
     
@@ -63,7 +64,7 @@ run_complete_triage(){
 }
 run_partial_triage(){
     clear
-    echo "Ejecutando Triage Completo"
+    print_banner
     exit 0
     
 }
@@ -83,6 +84,10 @@ while true; do
             ;;
         -q|--quit)
             echo "Goodbye!"
+            exit 0
+            ;;
+        -b|--banner)
+            print_banner
             exit 0
             ;;
         *)

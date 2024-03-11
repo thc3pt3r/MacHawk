@@ -13,7 +13,7 @@ source ./hawks/system_hawk.sh
 #funciones
 mostrar_ayuda() {
     clear
-    echo " === MacHawk - Triage de equipos MacOs  by Deloitte ARG CIR TEAM === "
+    echo " === MacHawk - Triage de equipos MacOs  by Thc3pt3r === "
     echo "Uso: macHack.sh [opción]"
     echo "Opciones:"
     echo "  -h, --help          Show this help."

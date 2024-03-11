@@ -45,4 +45,4 @@ To use MacHawk, you need the following:
 
 If you find my work helpful or insightful and would like to support me, consider buying me a coffee! Your support helps me stay fueled up to continue my work in cybersecurity and sharing valuable insights with the community.
 
-[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-Donate-yellow)](Your_Coffee_Link_Here)
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-Donate-yellow)](<script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="thc3pt3r" data-color="#FFDD00" data-emoji="🍺"  data-font="Cookie" data-text="Buy me a beer" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>)
